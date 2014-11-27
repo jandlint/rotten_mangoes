@@ -7,6 +7,7 @@ gem 'rmagick'
 gem 'carrierwave'
 
 gem 'kaminari'
+gem 'pry'
 
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'

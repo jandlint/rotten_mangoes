@@ -1,8 +1,10 @@
 <%= paginate @users %>
 <div>
+<span>
 <% @users.each do |user| %>
   <ul> <%= user.firstname %> <%= user.lastname %>
   <li> <%= user.email %> </li>
   <li> <%= user.admin %> </li></ul>
+<%= button_to "delete", admin_user_path(user), method: "delete" %></span>
 <% end %>
 </div>
