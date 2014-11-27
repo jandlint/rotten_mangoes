@@ -1,12 +1,16 @@
 class Admin::UsersController < ApplicationController
 
+  before_action :require_admin_access
+
   def index
+    @users = User.all
   end
 
   def create
   end
 
   def new
+    @user = User.new
   end
 
   def edit
@@ -20,5 +24,5 @@ class Admin::UsersController < ApplicationController
 
   def destroy
   end
-  
+
 end

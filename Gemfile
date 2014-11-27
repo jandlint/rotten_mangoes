@@ -6,6 +6,8 @@ gem 'rails', '4.0.0'
 gem 'rmagick'
 gem 'carrierwave'
 
+gem 'kaminari'
+
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 
