@@ -4,8 +4,6 @@ class User < ActiveRecord::Base
 
   has_secure_password
 
-  paginates_per 10
-
   validates :email,
     presence: true
 

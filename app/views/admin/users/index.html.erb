@@ -1,5 +1,8 @@
-<% paginate @users %>
-
+<%= paginate @users %>
+<div>
 <% @users.each do |user| %>
-  <%= user.firstname %>
+  <ul> <%= user.firstname %> <%= user.lastname %>
+  <li> <%= user.email %> </li>
+  <li> <%= user.admin %> </li></ul>
 <% end %>
+</div>
