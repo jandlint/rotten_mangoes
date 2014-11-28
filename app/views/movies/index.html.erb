@@ -1,10 +1,12 @@
 <h1>Rotten Mangoes</h1>
 <h1>Movie Search</h1>
 <%= form_tag(movies_path, method: "get") do %>
-<%= label_tag :director, "Director"%>
-<%= text_field_tag :director %>
-<%= label_tag :title, "Title"%>
-<%= text_field_tag :title %>
+<%#= label_tag :director, "Director"%>
+<%#= text_field_tag :director %>
+<%#= label_tag :title, "Title"%>
+<%#= text_field_tag :title %>
+<%= label_tag :title_or_director, "Title or Director" %>
+<%= text_field_tag :title_or_director %>
 <%= select_tag(:duration, options_for_select([["Duration","0|1000"],["Less than 90 minutes", "0|89"],["Between 90 and 120 minutes", "90|120"], ["Longer than 120 minutes","121|1000"]]))%>
 <%= submit_tag("Search")%>
 <% end %>
