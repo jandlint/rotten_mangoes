@@ -1,0 +1,11 @@
+<%= link_to image_tag(movie.image.url(:thumb).to_s), movie_path(movie) %>
+  <h2><%= link_to movie.title, movie_path(movie) %> | 
+      <% if movie.reviews.size == 0 %>
+        <p>No reviews yet.</p>
+      <% else %>
+        <%= movie.review_average %>/10</h2>
+      <% end %>
+  <h3><%= formatted_date(movie.release_date) %></h3>
+  <h4>Dir. <%= movie.director %> | <%= movie.runtime_in_minutes %> minutes</h4>
+  <p><%= movie.description %></p>
+  <hr>
