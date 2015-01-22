@@ -24,8 +24,6 @@ class Movie < ActiveRecord::Base
   validate :release_date_is_in_the_future
 
   scope :search_title_or_director, ->(params) {where("title LIKE ? OR director LIKE ?", "%#{params[:title_or_director]}%", "%#{params[:title_or_director]}%")}
-  # scope :search_title, ->(params) {where "title LIKE ?", "%#{params[:title]}%"}
-  # scope :search_director, ->(params) {where "director LIKE ?", "%#{params[:director]}%"}
   scope :search_duration, ->(params) {where(runtime_in_minutes: (params[:duration].split("|").first.to_i)..(params[:duration].split("|").last.to_i))}
 
   def review_average  

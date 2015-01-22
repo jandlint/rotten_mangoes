@@ -1,17 +1,12 @@
 RottenMangoes::Application.routes.draw do
-  
-  get "users/index"
-  get "users/create"
-  get "users/new"
-  get "users/edit"
-  get "users/show"
-  get "users/update"
-  get "users/destroy"
+
+  get '/admin/change_users/:id', to: 'admin/users#change_user'
+
   resources :movies do
     resources :reviews, only: [:new, :create]
   end
-  resources :users, only: [:new, :create]
-  resources :session, only: [:new, :create, :destroy]
+  resources :users, only: [:new, :create, :show]
+  resource :session, only: [:new, :create, :destroy]
   root to: 'movies#index'
 
   namespace :admin do
