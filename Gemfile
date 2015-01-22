@@ -38,13 +38,11 @@ end
 # Use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.0.0'
 
-group :production do
-  gem 'pg'
-end
+gem 'pg'
 
-group :development, :test do
-  gem 'sqlite3'
-end
+gem 'rails_12factor', group: :production
+
+ruby "2.1.1"
 
 # Use unicorn as the app server
 # gem 'unicorn'
