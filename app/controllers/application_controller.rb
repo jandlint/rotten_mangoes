@@ -9,9 +9,13 @@ class ApplicationController < ActionController::Base
     if !current_user
       flash[:alert] = "You must log in."
       redirect_to new_session_path
-    elsif !current_user.admin
-      flash[:error] = "You're not an admin! Go away!"
-      redirect_to(root_path) if !current_user.admin
+    end
+  end
+
+  def restrict_admin_access
+    if !current_user.admin
+    flash[:error] = "You're not an admin! Go away!"
+    redirect_to(root_path) if !current_user.admin
     end
   end
 
